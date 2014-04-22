@@ -13,26 +13,28 @@ dj-libcloud
 
 Adds easy support for libcloud to Django. This allows for handling of media assets for Django and is designed to work easily with Python 3.3+ and Django 1.6+. In the works is support for Python 2.7.
 
-Many thanks go to Jannis Leidel for giving me the code to get this running.
+Many thanks go to Jannis Leidel for giving me the code to get this started.
 
 Documentation
 -------------
 
 The full documentation is at https://dj-libcloud.readthedocs.org.
 
-Quickstart for Mac OS X
+
+
+Quickstart
 ------------------------
 
-Other quickstarts will happen. Just working on Mac OS X for now.
+Libcloud verifies server SSL certificates before it lets you do anything. It will search your system for the CA certificate, and if it doesn't find it then it will blow up. See https://libcloud.readthedocs.org/en/latest/other/ssl-certificate-validation.html
 
-Get curl-ca-bundle::
+Installing CA certificate bundle on Mac OS X::
 
-    brew install curl-ca-bundle
-    export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
+    # Assuming you are using homebrew for Mac OS X dependency management.
+    $ brew install curl-ca-bundle
 
 Install dj-libcloud::
 
-    pip install dj-libcloud
+    $ pip install dj-libcloud
 
 Then use it in a project::
 
@@ -40,7 +42,7 @@ Then use it in a project::
 
     STATIC_URL = 'https://my-assets.cdn/static/'
     MEDIA_URL = 'https://my-assets.cdn/media/'
-    STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'
+    STATICFILES_STORAGE = 'djlibcloud.storage.PipelineStorage'
     LIBCLOUD_PROVIDERS = {
         'amazon_s3': {
             'type': 'libcloud.storage.types.Provider.S3',  # TODO List all the type options
@@ -56,4 +58,13 @@ Then use it in a project::
 Features
 --------
 
-* TODO
+* Works for uploading media assets using Python 3.3 and Django 1.6.
+* In theory supports all the backends that libcloud supports.
+* Code borged from work of Jannis Leidel, Django core developer, the master of Django static asset managment, and a great guy.
+
+TODO
+-----
+
+* Tests! OMG TESTS!!!
+* More documentation.
+* Backport to Python 2.7
