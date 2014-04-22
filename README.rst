@@ -5,11 +5,6 @@ dj-libcloud
 .. image:: https://badge.fury.io/py/dj-libcloud.png
     :target: https://badge.fury.io/py/dj-libcloud
 
-.. image:: https://travis-ci.org/pydanny/dj-libcloud.png?branch=master
-    :target: https://travis-ci.org/pydanny/dj-libcloud
-
-.. image:: https://coveralls.io/repos/pydanny/dj-libcloud/badge.png?branch=master
-    :target: https://coveralls.io/r/pydanny/dj-libcloud?branch=master
 
 Adds easy support for libcloud to Django. This allows for handling of media assets for Django and is designed to work easily with Python 3.3+ and Django 1.6+. In the works is support for Python 2.7.
 
@@ -68,3 +63,5 @@ TODO
 * Tests! OMG TESTS!!!
 * More documentation.
 * Backport to Python 2.7
+* Add better error message if bucket not found
+* Come up with more storage types so we aren't dependant on django-pipeline. Nothing wrong with pipeline, just want to provide more options.
