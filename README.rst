@@ -38,10 +38,10 @@ Then use it in a project::
     STATICFILES_STORAGE = 'djlibcloud.storage.PipelineStorage'
     LIBCLOUD_PROVIDERS = {
         'amazon_s3': {
-            'type': 'libcloud.storage.types.Provider.S3',  # TODO List all the type options
+            'type': 'libcloud.storage.types.Provider.S3',
             'user': os.environ.get('AWS_ACCESS_KEY'),
             'key': os.environ.get('AWS_SECRET_KEY'),
-            'bucket': 'my-assets-cdn',  # TODO Add better message if bucket not found
+            'bucket': 'my-assets-cdn',  
             'secure': True,
         }
     }
@@ -59,9 +59,9 @@ TODO
 -----
 
 * Tests! OMG TESTS!!!
-* More documentation.
-* Backport to Python 2.7
-* Add better error message if bucket not found
+* More documentation. Especially for provider types.
+* Backport to Python 2.7.
+* Add better error message if bucket not found.
 * Come up with more storage types so we aren't dependant on django-pipeline. Nothing wrong with pipeline, just want to provide more options.
 
 CREDIT

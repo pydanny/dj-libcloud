@@ -7,4 +7,4 @@ History
 ++++++++++++++++++
 
 * First release on PyPI.
-* Frustration over lack of easy media asset support for Django and Python.
+* Frustration over lack of easy media asset support for Django and Python 3.
