@@ -35,8 +35,8 @@ Then use it in a project::
     MEDIA_URL = 'https://my-assets-cdn/media/'
     STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'
     LIBCLOUD_PROVIDERS = {
-        'amazon_eu_west': {
-            'type': 'libcloud.storage.types.Provider.S3_EU_WEST_HOST',
+        'amazon_s3': {
+            'type': 'libcloud.storage.types.Provider.S3',
             'user': os.environ.get('AWS_ACCESS_KEY'),
             'key': os.environ.get('AWS_SECRET_KEY'),
             'bucket': 'caniusepython3-assets',
@@ -44,7 +44,7 @@ Then use it in a project::
         }
     }
 
-    DEFAULT_LIBCLOUD_PROVIDER = 'amazon_eu_west'
+    DEFAULT_LIBCLOUD_PROVIDER = 'amazon_s3'
 
 Features
 --------
