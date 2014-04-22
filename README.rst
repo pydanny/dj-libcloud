@@ -5,16 +5,14 @@ dj-libcloud
 .. image:: https://badge.fury.io/py/dj-libcloud.png
     :target: https://badge.fury.io/py/dj-libcloud
 
-
 Adds easy support for libcloud to Django. This allows for handling of media assets for Django and is designed to work easily with Python 3.3+ and Django 1.6+. In the works is support for Python 2.7.
 
-Many thanks go to Jannis Leidel for giving me the code to get this started.
+WARNING: This project is in an ALPHA state. The only testing done so far is me running `collectstatic` from my local machine and a Heroku app. That works for me, but please don't count on it working for you. Yet.  
 
 Documentation
 -------------
 
 The full documentation is at https://dj-libcloud.readthedocs.org.
-
 
 
 Quickstart
@@ -65,3 +63,8 @@ TODO
 * Backport to Python 2.7
 * Add better error message if bucket not found
 * Come up with more storage types so we aren't dependant on django-pipeline. Nothing wrong with pipeline, just want to provide more options.
+
+CREDIT
+------
+
+Many thanks to Jannis Leidel for giving me the code to get this started.
