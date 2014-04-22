@@ -63,6 +63,28 @@ TODO
 * Backport to Python 2.7.
 * Add better error message if bucket not found.
 * Come up with more storage types so we aren't dependant on django-pipeline. Nothing wrong with pipeline, just want to provide more options.
+* Speed it up. Seems to run really slow.
+
+FAQ
+-----
+
+Because you just had to ask.
+
+Why not use dj-static or whitenoise?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Those are great libraries, but are not what you want when handling user uploaded media.
+
+Why not just update django-storages?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`libcloud` is awesome and has a dedicated team devoted to it. We can have it do most of the heavy lifting. Heck, converting `django-storages` to work with Python 3 looked like too much work. Sometimes you just have to start anew, right?
+
+How can I contribute?
+~~~~~~~~~~~~~~~~~~~~~
+
+Please read http://dj-libcloud.readthedocs.org/en/latest/contributing.html
+
 
 CREDIT
 ------
