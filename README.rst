@@ -13,6 +13,8 @@ dj-libcloud
 
 Adds easy support for libcloud to Django. This allows for handling of media assets for Django and is designed to work easily with Python 3.3+ and Python 2.7. The current target Django environment is 1.6.
 
+Many thanks go to Jannis Leidel for giving me the code to get this running.
+
 Documentation
 -------------
 
@@ -27,7 +29,22 @@ Install dj-libcloud::
 
 Then use it in a project::
 
-    import dj-libcloud
+    # settings.py
+
+    STATIC_URL = 'https://my-assets-cdn/static/'
+    MEDIA_URL = 'https://my-assets-cdn/media/'
+    STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'
+    LIBCLOUD_PROVIDERS = {
+        'amazon_eu_west': {
+            'type': 'libcloud.storage.types.Provider.S3_EU_WEST_HOST',
+            'user': os.environ.get('AWS_ACCESS_KEY'),
+            'key': os.environ.get('AWS_SECRET_KEY'),
+            'bucket': 'caniusepython3-assets',
+            'secure': True,
+        }
+    }
+
+    DEFAULT_LIBCLOUD_PROVIDER = 'amazon_eu_west'
 
 Features
 --------
