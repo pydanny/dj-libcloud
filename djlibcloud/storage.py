@@ -15,7 +15,7 @@ from pipeline.storage import PipelineMixin
 
 try:
     from email.utils import parsedate_tz
-except ImportError: # pragma: no cover
+except ImportError:  # pragma: no cover
     from email.Utils import parsedate_tz
 
 try:
@@ -145,7 +145,7 @@ class LibCloudStorage(Storage):
                     files.append(o.name)
                 elif o.name.count('/') == 1:
                     dir_name = o.name[:o.name.index('/')]
-                    if not dir_name in dirs:
+                    if dir_name not in dirs:
                         dirs.append(dir_name)
             elif o.name.startswith(path):
                 if o.name.count('/') <= path.count('/'):
@@ -177,9 +177,13 @@ class LibCloudStorage(Storage):
                     return url
                 split_netloc = parsed_url.netloc.split('.')
                 split_netloc[1] = 'ssl'
-                url = urlunparse('https', '.'.join(split_netloc), parsed_url.path,
-                                 parsed_url.params, parsed_url.query,
-                                 parsed_url.fragment)
+                url = urlunparse(
+                    'https',
+                    '.'.join(split_netloc),
+                    parsed_url.path,
+                    parsed_url.params, parsed_url.query,
+                    parsed_url.fragment
+                )
             if 's3' in provider_type:
                 url = url.replace('http://', 'https://')
         return url
