@@ -35,7 +35,7 @@ Then use it in a project::
 
     STATIC_URL = 'https://my-assets.cdn/static/'
     MEDIA_URL = 'https://my-assets.cdn/media/'
-    STATICFILES_STORAGE = 'djlibcloud.storage.PipelineStorage'
+    STATICFILES_STORAGE = 'djlibcloud.storage.LibCloudStorage'
     LIBCLOUD_PROVIDERS = {
         'amazon_s3': {
             'type': 'libcloud.storage.types.Provider.S3',
@@ -74,6 +74,10 @@ How can I contribute?
 
 Please read http://dj-libcloud.readthedocs.org/en/latest/contributing.html
 
+What about compressors like django-pipeline?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Working on it. Currently the `PipelineCachedCloudStorage` class breaks the second time you run it. See https://github.com/pydanny/dj-libcloud/issues/7
 
 CREDIT
 ------

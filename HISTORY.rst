@@ -3,10 +3,13 @@
 History
 -------
 
-0.2.0 (2014-04-??)
+0.1.1 (2014-04-21)
 ++++++++++++++++++
 
-* General cleanup
+* Fixed second-time run problem by just using LibCloudStorage class
+* Made django-pipeline optional
+* Removed unnecessary files
+* Moved TODO to issue tracker
 
 0.1.0 (2014-04-21)
 ++++++++++++++++++
