@@ -5,7 +5,7 @@ dj-libcloud
 .. image:: https://badge.fury.io/py/dj-libcloud.png
     :target: https://badge.fury.io/py/dj-libcloud
 
-Adds easy support for libcloud to Django. This allows for handling of media assets for Django and is designed to work easily with Python 3.3+ and Django 1.6+. In the works is support for Python 2.7.
+Adds easy python 3 support for Django for management of static assests (JavaScript, CSS, images, and user uploaded content.
 
 WARNING: This project is in an ALPHA state. The only testing done so far is me running `collectstatic` from my local machine and a Heroku app. That works for me, but please don't count on it working for you. Yet.  
 
