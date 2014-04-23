@@ -3,6 +3,12 @@
 History
 -------
 
+0.1.2 (2014-04-21)
+++++++++++++++++++
+
+* Remove django-pipeline as an option
+* Add cookbook to docs that includes django-pipeline
+
 0.1.1 (2014-04-21)
 ++++++++++++++++++
 

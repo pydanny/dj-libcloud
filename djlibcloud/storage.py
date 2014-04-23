@@ -5,16 +5,11 @@ from io import BytesIO
 import os
 
 from django.conf import settings
-from django.contrib.staticfiles.storage import CachedFilesMixin
 from django.core.files.storage import Storage
 from django.core.files.base import File
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.six.moves.urllib.parse import urlparse, urlunparse
 
-try:
-    from pipeline.storage import PipelineMixin
-except ImportError:  # pragma: no cover
-    PipelineMixin = None
 
 try:
     from email.utils import parsedate_tz
@@ -254,11 +249,3 @@ class LibCloudFile(File):
         if self._is_dirty:
             self._storage._save(self._name, self.file)
         self.file.close()
-
-
-if PipelineMixin:
-    class PipelineCachedCloudStorage(PipelineMixin,
-                                     CachedFilesMixin,
-                                     LibCloudStorage):
-        """ Borked on second run of collectstatic"""
-        pass

@@ -67,7 +67,7 @@ Those are great libraries, but are not what you want when handling user uploaded
 Why not just update django-storages?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-`libcloud` is awesome and has a dedicated team devoted to it. We can have it do most of the heavy lifting. Heck, converting `django-storages` to work with Python 3 looked like too much work. Sometimes you just have to start anew, right?
+`libcloud` is awesome and has a dedicated team devoted to it. We can have it do most of the heavy lifting. On the other hand, converting `django-storages` to work with Python 3 looked like too much work. Sometimes you just have to start anew, right?
 
 How can I contribute?
 ++++++++++++++++++++++++++++++++++++
