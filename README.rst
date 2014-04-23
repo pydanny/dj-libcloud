@@ -60,22 +60,22 @@ FAQ
 Because you just had to ask.
 
 Why not use dj-static or whitenoise?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Those are great libraries, but are not what you want when handling user uploaded media.
 
 Why not just update django-storages?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 `libcloud` is awesome and has a dedicated team devoted to it. We can have it do most of the heavy lifting. Heck, converting `django-storages` to work with Python 3 looked like too much work. Sometimes you just have to start anew, right?
 
 How can I contribute?
-~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++++++++
 
 Please read http://dj-libcloud.readthedocs.org/en/latest/contributing.html
 
 What about compressors like django-pipeline?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Working on it. Currently the `PipelineCachedCloudStorage` class breaks the second time you run it. See https://github.com/pydanny/dj-libcloud/issues/7
 
