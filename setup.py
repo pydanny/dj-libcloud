@@ -37,6 +37,7 @@ setup(
     include_package_data=True,
     install_requires=[
         'apache-libcloud>=0.14.1',
+        'django>=1.6.0'
     ],
     license="BSD",
     zip_safe=False,
