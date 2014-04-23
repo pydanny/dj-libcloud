@@ -5,7 +5,7 @@ dj-libcloud
 .. image:: https://badge.fury.io/py/dj-libcloud.png
     :target: https://badge.fury.io/py/dj-libcloud
 
-Adds easy python 3 support for Django for management of static assests (JavaScript, CSS, images, and user uploaded content.
+Adds easy python 3 support to Django for management of static assests (JavaScript, CSS, images, and user uploaded content.
 
 WARNING: This project is in an ALPHA state. The only testing done so far is me running `collectstatic` from my local machine and a Heroku app. That works for me, but please don't count on it working for you. Yet.  
 
