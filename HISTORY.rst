@@ -3,7 +3,7 @@
 History
 -------
 
-0.1.2 (2014-04-21)
+0.1.2 (2014-04-??)
 ++++++++++++++++++
 
 * Remove django-pipeline as an option
