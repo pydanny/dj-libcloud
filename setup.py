@@ -26,7 +26,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 setup(
     name='dj-libcloud',
     version=version,
-    description="""Adds easy support for libcloud to Django""",
+    description="""Adds easy python 3 support for Django for management of static assests (JavaScript, CSS, images, and user uploaded content).""",
     long_description=readme + '\n\n' + history,
     author='Daniel Greenfeld',
     author_email='pydanny@gmail.com',
@@ -42,7 +42,7 @@ setup(
     zip_safe=False,
     keywords='dj-libcloud',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 3 - Alpha',
         'Framework :: Django',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',

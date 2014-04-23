@@ -53,17 +53,6 @@ Features
 
 * Works for uploading media assets using Python 3.3 and Django 1.6.
 * In theory supports all the backends that libcloud supports.
-* Code borged from work of Jannis Leidel, Django core developer, the master of Django static asset managment, and a great guy.
-
-TODO
------
-
-* Tests! OMG TESTS!!!
-* More documentation. Especially for provider types.
-* Backport to Python 2.7.
-* Add better error message if bucket not found.
-* Come up with more storage types so we aren't dependant on django-pipeline. Nothing wrong with pipeline, just want to provide more options.
-* Speed it up. Seems to run really slow.
 
 FAQ
 -----
@@ -89,4 +78,4 @@ Please read http://dj-libcloud.readthedocs.org/en/latest/contributing.html
 CREDIT
 ------
 
-Many thanks to Jannis Leidel for giving me the code to get this started.
+Many thanks to Jannis Leidel (@jezdez) for giving me the code to get this started. He's a Django core developer, the master of Django static asset managment, and overall a great great guy.
