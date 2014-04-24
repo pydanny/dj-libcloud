@@ -3,10 +3,11 @@
 History
 -------
 
-0.1.2 (2014-04-??)
+0.1.2 (2014-04-24)
 ++++++++++++++++++
 
-* Remove django-pipeline as an option
+* Confirmed to work with Python 2.7
+* Remove django-pipeline specific code from storages
 * Add cookbook to docs that includes django-pipeline
 
 0.1.1 (2014-04-21)

@@ -26,7 +26,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 setup(
     name='dj-libcloud',
     version=version,
-    description="""Adds easy python 3 support to Django for management of static assests (JavaScript, CSS, images, and user uploaded content).""",
+    description="""Adds easy python 3 and 2.7 support to Django for management of static assets.""",
     long_description=readme + '\n\n' + history,
     author='Daniel Greenfeld',
     author_email='pydanny@gmail.com',
