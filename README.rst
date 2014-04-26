@@ -5,7 +5,9 @@ dj-libcloud
 .. image:: https://badge.fury.io/py/dj-libcloud.png
     :target: https://badge.fury.io/py/dj-libcloud
 
-Adds easy python 3 and 2.7 support to Django for management of static assets.
+Adds easy python 3 and 2.7 support to Django for management of static assets. This is a wrapper around the excellent `Apache Libcloud`_ library.
+
+.. _`Apache Libcloud`: https://libcloud.apache.org/
 
 Documentation
 -------------
@@ -49,8 +51,12 @@ Then use it in a project::
 Other LibCloud Providers
 ------------------------
 
-If you want to use other libcloud providers (Rackspace, Openstack, other AWS centers, et al), please visit the `dj-libcloud cookbook`_.
+If you want to use other libcloud providers (Rackspace, Openstack, other AWS centers, et al), please visit:
 
+* The `libcloud list of supported providers`_
+* The `dj-libcloud cookbook`_.
+
+.. _`libcloud list of supported providers`: https://libcloud.readthedocs.org/en/latest/storage/supported_providers.html
 .. _`dj-libcloud cookbook`: http://dj-libcloud.readthedocs.org/en/latest/cookbook.html
 
 Features
@@ -73,6 +79,15 @@ Why not just update django-storages?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 `libcloud` is awesome and has a dedicated team devoted to it. We can have it do most of the heavy lifting. On the other hand, converting `django-storages` to work with Python 3 looked like too much work. Sometimes you just have to start anew, right?
+
+What storage providers does dj-libcloud support?
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+dj-libcloud is a wrapper around libcloud, meaning it supports all the providers of that library. Check out the `full list of supported providers`_! 
+
+.. _`full list of supported providers`: https://libcloud.readthedocs.org/en/latest/storage/supported_providers.html
+
+
 
 How can I contribute?
 ++++++++++++++++++++++++++++++++++++
