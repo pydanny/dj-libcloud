@@ -14,6 +14,11 @@ except ImportError:
 version = djlibcloud.__version__
 
 if sys.argv[-1] == 'publish':
+    try:
+        import wheel
+    except ImportError:
+        print("Please install wheel: pip install wheel")
+        sys.exit()
     os.system('python setup.py sdist bdist_wheel upload')
     print("You probably want to also tag the version now:")
     print("  git tag -a %s -m 'version %s'" % (version, version))
