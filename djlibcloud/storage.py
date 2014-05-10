@@ -213,7 +213,6 @@ class LibCloudStorage(Storage):
 class LibCloudPrivateStorage(LibCloudStorage):
     
     def _save(self, name, content):
-        extra = {'acl': 'public-read'}
         self.driver.upload_object_via_stream(iter(content.file),
                                              self._get_bucket(),
                                              name)
