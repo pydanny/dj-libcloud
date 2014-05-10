@@ -46,8 +46,6 @@ Then use it in a project::
         }
     }
 
-    DEFAULT_LIBCLOUD_PROVIDER = 'amazon_s3'
-
 Other LibCloud Providers
 ------------------------
 
