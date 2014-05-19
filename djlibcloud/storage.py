@@ -165,10 +165,21 @@ class LibCloudStorage(Storage):
             return -1
 
     def url(self, name):
+        provider_type = self.provider['type'].lower()
         obj = self._get_object(name)
-        url = self.driver.get_object_cdn_url(obj)
+        if not obj:
+            return None
+        try:
+            url = self.driver.get_object_cdn_url(obj)
+        except NotImplementedError as e:
+            if 's3' in provider_type:
+                # For using S3, which in libcloud doesn't provide a get_object_cdn_url method.
+                # TODO - add regional differences for S3 server
+                container_cdn_url = os.path.join("https://s3-us-west-2.amazonaws.com", self.bucket)
+                url = '%s/%s' % (container_cdn_url, obj.name)
+            else:
+                raise e
         if self.secure:
-            provider_type = self.provider['type'].lower()
             if 'cloudfiles' in provider_type:
                 parsed_url = urlparse(url)
                 if parsed_url.scheme != 'http':
@@ -210,13 +221,15 @@ class LibCloudStorage(Storage):
                                              name, extra=extra)
         return name
 
+
 class LibCloudPrivateStorage(LibCloudStorage):
-    
+
     def _save(self, name, content):
         self.driver.upload_object_via_stream(iter(content.file),
                                              self._get_bucket(),
                                              name)
         return name
+
 
 class LibCloudFile(File):
     """
