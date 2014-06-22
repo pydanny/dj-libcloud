@@ -7,6 +7,9 @@ History
 ++++++++++++++++++
 
 * Add link from README to cookbook
+* Fix ``url`` method for Google Storage, Rackspace Cloudfiles and
+  Microsoft Azure. Also return the correct value for non-US Amazon S3
+  buckets.
 
 0.1.2 (2014-04-24)
 ++++++++++++++++++

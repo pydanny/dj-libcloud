@@ -8,7 +8,7 @@ from django.conf import settings
 from django.core.files.storage import Storage
 from django.core.files.base import File
 from django.core.exceptions import ImproperlyConfigured
-from django.utils.six.moves.urllib.parse import urlparse, urlunparse
+from django.utils.six.moves.urllib.parse import urlparse, urlunparse, urljoin
 
 
 try:
@@ -170,13 +170,19 @@ class LibCloudStorage(Storage):
         if not obj:
             return None
         try:
+            # currently only Cloudfiles supports it
             url = self.driver.get_object_cdn_url(obj)
         except NotImplementedError as e:
+            object_path = '%s/%s' % (self.bucket, obj.name)
             if 's3' in provider_type:
-                # For using S3, which in libcloud doesn't provide a get_object_cdn_url method.
-                # TODO - add regional differences for S3 server
-                container_cdn_url = os.path.join("https://s3-us-west-2.amazonaws.com", self.bucket)
-                url = '%s/%s' % (container_cdn_url, obj.name)
+                base_url = 'http://%s' % self.driver.connection.host
+                url = urljoin(base_url, object_path)
+            elif 'google' in provider_type:
+                url = urljoin('http://storage.googleapis.com', object_path)
+            elif 'azure' in provider_type:
+                base_url = ('http://%s.blob.core.windows.net' %
+                            self.provider['user'])
+                url = urljoin(base_url, object_path)
             else:
                 raise e
         if self.secure:
@@ -193,7 +199,9 @@ class LibCloudStorage(Storage):
                     parsed_url.params, parsed_url.query,
                     parsed_url.fragment
                 )
-            if 's3' in provider_type:
+            if ('s3' in provider_type or
+                    'google' in provider_type or
+                    'azure' in provider_type):
                 url = url.replace('http://', 'https://')
         return url
 

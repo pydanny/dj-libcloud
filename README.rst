@@ -29,21 +29,21 @@ Install dj-libcloud::
 
     $ pip install dj-libcloud
 
-Then use it in a project::
+Then use it in a project, e.g. for your static files::
 
     # settings.py
 
-    STATIC_URL = 'https://my-assets.cdn/static/'
-    MEDIA_URL = 'https://my-assets.cdn/media/'
+    STATIC_URL = 'https://s3.amazonaws.com/my-assets/'
     STATICFILES_STORAGE = 'djlibcloud.storage.LibCloudStorage'
+
     LIBCLOUD_PROVIDERS = {
-        'amazon_s3': {
+        'default': {
             'type': 'libcloud.storage.types.Provider.S3',
             'user': os.environ.get('AWS_ACCESS_KEY'),
             'key': os.environ.get('AWS_SECRET_KEY'),
-            'bucket': 'my-assets-cdn',  
+            'bucket': 'my-assets',
             'secure': True,
-        }
+        },
     }
 
 Other LibCloud Providers
@@ -81,7 +81,7 @@ Why not just update django-storages?
 What storage providers does dj-libcloud support?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-dj-libcloud is a wrapper around libcloud, meaning it supports all the providers of that library. Check out the `full list of supported providers`_! 
+dj-libcloud is a wrapper around libcloud, meaning it supports all the providers of that library. Check out the `full list of supported providers`_!
 
 .. _`full list of supported providers`: https://libcloud.readthedocs.org/en/latest/storage/supported_providers.html
 
