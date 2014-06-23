@@ -6,6 +6,7 @@ Development Lead
 ----------------
 
 * Daniel Greenfeld <pydanny@gmail.com>
+* Jannis Leidel
 
 Contributors
 ------------

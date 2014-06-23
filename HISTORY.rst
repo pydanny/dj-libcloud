@@ -3,9 +3,11 @@
 History
 -------
 
-0.1.3 (2014-04-??)
+0.2.0(2014-06-23)
 ++++++++++++++++++
 
+* Updated url method to return correct values for Rackspace Cloudfiles, Microsoft Azure, Google Storage, non-US Amazon SV (Thanks Jannis!)
+* Improved the cookbook immensely (Thanks Jannis!)
 * Add link from README to cookbook
 * Fix ``url`` method for Google Storage, Rackspace Cloudfiles and
   Microsoft Azure. Also return the correct value for non-US Amazon S3
