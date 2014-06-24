@@ -5,13 +5,18 @@ language: python
 python:
   - "3.3"
   - "2.7"
+  - "2.6"
 \
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -r requirements-test.txt
+install: pip install tox
 
 # command to run tests using coverage, e.g. python setup.py test
-script: coverage run --source djlibcloud runtests.py
+script:
+  - if [[ $TRAVIS_PYTHON_VERSION == '2.6' ]]; then tox -e py26; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.7' ]]; then tox -e py27; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.3' ]]; then tox -e py33; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then tox -e py34; fi
 
 # report coverage to coveralls.io
 after_success: coveralls
