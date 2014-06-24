@@ -12,7 +12,7 @@ import os
 import shutil
 import unittest
 
-from djlibcloud import models
+from djlibcloud import storage
 
 
 class TestDjlibcloud(unittest.TestCase):

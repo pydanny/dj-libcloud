@@ -7,9 +7,9 @@ import sys
 import djlibcloud
 
 try:
-    from setuptools import setup
+    from setuptools import setup, Command
 except ImportError:
-    from distutils.core import setup
+    from distutils.core import setup, Command
 
 version = djlibcloud.__version__
 
@@ -28,6 +28,21 @@ if sys.argv[-1] == 'publish':
 readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
+
+class PyTest(Command):
+    user_options = []
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        import sys,subprocess
+        errno = subprocess.call([sys.executable, 'runtests.py'])
+        raise SystemExit(errno)
+
+
 setup(
     name='dj-libcloud',
     version=version,
@@ -44,6 +59,7 @@ setup(
         'apache-libcloud>=0.14.1',
         'django>=1.6.0'
     ],
+    cmdclass = {'test': PyTest},
     license="BSD",
     zip_safe=False,
     keywords='dj-libcloud',
