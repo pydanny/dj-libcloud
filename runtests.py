@@ -2923,33 +2923,6 @@ import zlib
 class DictImporter(object):
     def __init__(self, sources):
         self.sources = sources
-        from django.conf import settings
-        settings.configure(
-            DEBUG=True,
-            USE_TZ=True,
-            DATABASES={
-                "default": {
-                    "ENGINE": "django.db.backends.sqlite3",
-                }
-            },
-            ROOT_URLCONF="djlibcloud.urls",
-            INSTALLED_APPS=[
-                "django.contrib.auth",
-                "django.contrib.contenttypes",
-                "django.contrib.sites",
-                "djlibcloud",
-            ],
-            SITE_ID=1,
-            STATIC_URL = 'http://127.0.0.1:8000/files/',
-            STATICFILES_STORAGE = 'djlibcloud.storage.LibCloudStorage',
-
-            LIBCLOUD_PROVIDERS = {
-                'local': {
-                    'type': 'libcloud.storage.types.Provider.LOCAL',
-                },
-            },
-            DEFAULT_LIBCLOUD_PROVIDER = 'local'
-        )
 
     def find_module(self, fullname, path=None):
         if fullname == "argparse" and sys.version_info >= (2,7):

@@ -12,8 +12,7 @@ import os
 import shutil
 import unittest
 from django.core.files.storage import get_storage_class
-
-from djlibcloud import storage
+from django.conf import settings
 from djlibcloud.storage import LibCloudStorage
 
 
@@ -31,6 +30,7 @@ class TestDjlibcloud(unittest.TestCase):
         self.assertEqual(
             get_storage_class('djlibcloud.storage.LibCloudStorage'),
             LibCloudStorage)
+        self.assertEqual(settings.DEFAULT_LIBCLOUD_PROVIDER, 'local')
 
     @unittest.expectedFailure
     def test_improperly_configured(self):
