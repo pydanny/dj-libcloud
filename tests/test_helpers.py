@@ -1,17 +1,7 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""
-test_dj-libcloud
-------------
-
-Tests for `dj-libcloud` models module.
-"""
-
-import os
-import shutil
 import unittest
-from django.core.files.storage import get_storage_class
 
 from djlibcloud.storage import parse_date
 

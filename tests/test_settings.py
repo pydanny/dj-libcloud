@@ -13,7 +13,7 @@ INSTALLED_APPS=[
     "djlibcloud",
 ]
 SITE_ID=1
-STATIC_URL = 'http://127.0.0.1:8000/files/'
+STATIC_URL = '/files/'
 STATICFILES_STORAGE = 'djlibcloud.storage.LibCloudStorage'
 SECRET_KEY = 'TESTSECRET'
 
